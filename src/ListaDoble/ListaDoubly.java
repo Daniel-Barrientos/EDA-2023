@@ -70,7 +70,7 @@ public class ListaDoubly<A> implements Estructura<A> {
         return null;
     }
 
-    //hacer un metodo eliminar nodo
+    //hacer un metodo para eliminar nodo
     @Override
     public void eliminarNodo(A entrada) {
         Node actual = inicio;

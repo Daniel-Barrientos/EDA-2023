@@ -93,14 +93,14 @@ public class ListaDoubly<A> implements Estructura<A> {
         }
     }
 
-    //Eliminar al inicio
+    //Eliminar nodo al inicio
     @Override
     public void eliminarInicio() {
         inicio = inicio.getSiguiente();
         inicio.setAnterior(null);
     }
 
-    //Eliminar Final
+    //Eliminar nodo al Final
     @Override
     public void eliminarFinal() {
         fin = fin.getAnterior();

@@ -8,28 +8,29 @@ public class Pila<A> {
 
     Node<A> cima;
 
-    public Pila() {
+    public Node<A> getCima() {
+        return cima;
     }
 
-    public void apilar(A dato) {
-        Node<A> nuevo;
-        nuevo = new Node(dato, cima);
+    public void setCima(Node<A> cima) {
+        this.cima = cima;
+    }
+    public void apilar(A dato){
+        Node nuevo = new Node(dato,cima);
         cima = nuevo;
     }
-
-    public A desencolar() {
-        A resultado;
-        if (esVacia()) {
+    
+    public A desapilar(){
+        if(esVacia()){
             return null;
-        } else {
-            resultado = cima.getDato();
-            cima = cima.getSiguiente();
-            return resultado;
+        }else{
+            A dato=cima.getDato();
+            cima=cima.getSiguiente();
+            return dato;
         }
     }
-
-    public boolean esVacia() {
-        return (cima == null);
+    public boolean esVacia(){
+        return cima == null;
     }
-
+    
 }

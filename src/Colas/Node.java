@@ -6,13 +6,10 @@ package Colas;
  */
 public class Node<A> {
 
-    A dato;
-    Node siguiente;
+    private A dato;
+    private Node siguiente;
 
-    public Node() {
-    }
-
-    public Node(A dato, Node<A> siguiente) {
+    public Node(A dato, Node siguiente) {
         this.dato = dato;
         this.siguiente = siguiente;
     }

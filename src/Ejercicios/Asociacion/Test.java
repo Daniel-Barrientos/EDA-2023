@@ -11,6 +11,9 @@ public class Test {
         a.add(new Mascota("1", "Goliath", 4, "1004904242"));
         a.add(new Mascota("2", "Jaider", 3, "1004904242"));
         a.add(new Mascota("3", "Firulais", 8, "1004904242"));
+        a.add(new Mascota("4", "Moi", 12, "1004904242"));
+        a.add(new Mascota("5", "Lolo", 5, "1004904242"));
+        a.add(new Mascota("6", "Bruno", 1, "1004904242"));
         
         a.imprimirMascota();
         

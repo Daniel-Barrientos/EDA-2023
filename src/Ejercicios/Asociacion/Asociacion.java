@@ -28,12 +28,12 @@ public class Asociacion {
         }
     }
 
-    public void eliminarMascota(String mascota) {
+    public void eliminarMascota(Object mascota) {
         Node<Mascota> actual = mascotas.getInicio();
         Node<Mascota> anterior = null;
 
         while (actual != null) {
-            if (actual.getDato().getNombre() == mascota) {
+            if (actual.getDato().getNombre().equals(mascota)) {
                 if (anterior == null) {
                     // Si el nodo a eliminar es el primero, actualizamos el siguiente como primer nodo
                     mascotas.eliminarInicio();

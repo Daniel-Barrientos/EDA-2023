@@ -19,6 +19,7 @@ public class Test {
         
         System.out.println("-------------");
         a.eliminarMascota("Jaider");
+        a.eliminarMascota("Lolo");
         a.imprimirMascota();
         
     }

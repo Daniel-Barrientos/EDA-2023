@@ -107,4 +107,22 @@ public class ListaDoubly<A> implements Estructura<A> {
         fin.setSiguiente(null);
     }
 
+    public Node getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Node inicio) {
+        this.inicio = inicio;
+    }
+
+    public Node getFin() {
+        return fin;
+    }
+
+    public void setFin(Node fin) {
+        this.fin = fin;
+    }
+    
+    
+
 }

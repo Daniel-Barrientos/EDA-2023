@@ -2,6 +2,7 @@ package Ejercicios.Equipo;
 
 import ListaDoble.ListaDoubly;
 import ListaDoble.Node;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,17 +21,14 @@ public class Equipo {
         jugadores.add(jugador);
     }
 
-    public Node<Jugador> buscarMenorEdad() {
+    public Jugador buscarMenorEdad() {
         Node<Jugador> actual = jugadores.getInicio();
-        Node<Jugador> menor = null;
+        Node<Jugador> anterior = null;
+        ArrayList<Jugador> jugadorMenores = new ArrayList();
+        
+        
+        return null;
 
-        while (actual != null) {
-            if (actual.getDato().getEdad() < menor.getDato().getEdad()) {
-                menor = actual;
-                actual = actual.getSiguiente();
-            }
-        }
-        return menor;
     }
 
     public String buscarJugador(Object cedula) {

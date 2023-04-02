@@ -68,5 +68,14 @@ public class Equipo {
         }
         System.out.println("Jugador: " + mayor.getDato().getNombre() + ". Edad: " + mayor.getDato().getEdad());
     }
+    
+    public void imprimirJugador() {
+        Node<Jugador> aux = jugadores.getInicio();
+        while (aux != null) {
+            System.out.println("Jugador: [Nombre: " + aux.getDato().getNombre()+ ". Edad: " + aux.getDato().getEdad() + ". Estatura: " + aux.getDato().getEstatura() 
+                    + ". Cedula" + aux.getDato().getCedula() + ". Puntos: "+ aux.getDato().getPuntos() +  ".]");
+            aux = aux.getSiguiente();
+        }
+    }
 
 }

@@ -17,8 +17,11 @@ public class Test {
         equipo.addJugador(new Jugador("Moises", 26, 1.80, "126", 1));
         equipo.addJugador(new Jugador("Jaider", 23, 1.60, "152", 12));
         equipo.addJugador(new Jugador("Yofer", 21, 1.68, "136", 6));
+        equipo.imprimirJugador();
         
         System.out.println("-------------");
+        System.out.println("Se buscan los jugadores con menor edad");
+        
         
         
     }

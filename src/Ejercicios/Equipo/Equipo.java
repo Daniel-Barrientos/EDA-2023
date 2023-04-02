@@ -17,17 +17,31 @@ public class Equipo {
         jugadores = new ListaDoubly();
     }
 
+    public Equipo(String nombre) {
+        this.nombre = nombre;
+        jugadores = new ListaDoubly();
+    }
+
     public void addJugador(Jugador jugador) {
         jugadores.add(jugador);
     }
 
-    public Jugador buscarMenorEdad() {
+    public ArrayList<Jugador> buscarMenorEdad() {
         Node<Jugador> actual = jugadores.getInicio();
-        Node<Jugador> anterior = null;
-        ArrayList<Jugador> jugadorMenores = new ArrayList();
-        
-        
-        return null;
+        Integer edad = 200;
+        ArrayList<Jugador> jugadoresMenores = new ArrayList();
+
+        while (actual != null) {
+            if (actual.getDato().getEdad() < edad) {
+                jugadoresMenores.clear();
+                jugadoresMenores.add(actual.getDato());
+                edad = actual.getDato().getEdad();
+            } else if (actual.getDato().getEdad() == edad) {
+                jugadoresMenores.add(actual.getDato());
+            }
+            actual = actual.getSiguiente();
+        }
+        return jugadoresMenores;
 
     }
 

@@ -42,14 +42,13 @@ public class Equipo {
             actual = actual.getSiguiente();
         }
         return jugadoresMenores;
-
     }
 
-    public String buscarJugador(Object cedula) {
+    public String buscarJugador(String cedula) {
         Node<Jugador> aux = jugadores.getInicio();
         while (aux != null) {
             if (aux.getDato().getCedula().equals(cedula)) {
-                return "Jugador: " + aux.getDato().getNombre() + ". Edad: " + aux.getDato().getEdad();
+                return ("Jugador: " + aux.getDato().getNombre() + ". Edad: " + aux.getDato().getEdad() + ". Cedula: " + aux.getDato().getCedula());
             }
             aux = aux.getSiguiente();
         }
@@ -68,13 +67,24 @@ public class Equipo {
         }
         System.out.println("Jugador: " + mayor.getDato().getNombre() + ". Edad: " + mayor.getDato().getEdad());
     }
+
     
+    //Se imprime la lista de jugadores de la lista doble
     public void imprimirJugador() {
         Node<Jugador> aux = jugadores.getInicio();
         while (aux != null) {
-            System.out.println("Jugador: [Nombre: " + aux.getDato().getNombre()+ ". Edad: " + aux.getDato().getEdad() + ". Estatura: " + aux.getDato().getEstatura() 
-                    + ". Cedula" + aux.getDato().getCedula() + ". Puntos: "+ aux.getDato().getPuntos() +  ".]");
+            System.out.println("Jugador: [Nombre: " + aux.getDato().getNombre() + ". Edad: " + aux.getDato().getEdad() + ". Estatura: " + aux.getDato().getEstatura()
+                    + ". Cedula: " + aux.getDato().getCedula() + ". Puntos: " + aux.getDato().getPuntos() + ".]");
             aux = aux.getSiguiente();
+        }
+    }
+
+    
+    //metodo generico para imprimir listas de ArrayList
+    public void imprimiArrayList(ArrayList<Jugador> jugadores) {
+
+        for (Jugador jugador : jugadores) {
+            System.out.println("Jugador: [Nombre: " + jugador.getNombre() + ". Edad: " + jugador.getEdad() + ".]");
         }
     }
 

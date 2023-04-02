@@ -19,9 +19,13 @@ public class Test {
         equipo.addJugador(new Jugador("Yofer", 21, 1.68, "136", 6));
         equipo.imprimirJugador();
         
-        System.out.println("-------------");
+        System.out.println("\n-------------");
         System.out.println("Se buscan los jugadores con menor edad");
+        equipo.imprimiArrayList(equipo.buscarMenorEdad());
         
+        System.out.println("\n-------------");
+        System.out.println("Se buscan un jugador por cedula");
+        System.out.println(equipo.buscarJugador("124"));
         
         
     }

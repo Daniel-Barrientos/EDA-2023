@@ -14,6 +14,10 @@ public class Mascota {
     public Mascota() {
     }
 
+    public Mascota(String id) {
+        this.id = id;
+    }
+
     public Mascota(String id, String nombre, int edad, String cedula) {
         this.id = id;
         this.nombre = nombre;
@@ -21,6 +25,11 @@ public class Mascota {
         this.cedula = cedula;
     }
 
+    @Override
+    public String toString (){
+        return "Nombre: " + nombre + ", id: " +id + ", cedula: " + cedula;
+    }
+    
     public String getId() {
         return id;
     }

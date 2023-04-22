@@ -19,9 +19,10 @@ public class AsociacionTablaHash {
         return mascotas.get(mascota.getId());
     }
 
-    public Mascota buscarPropietario() {
-
+    public Mascota buscarPropietario(Mascota mascota) {
+        
         return null;
+        
     }
 
     public void add(Mascota mascota) {

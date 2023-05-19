@@ -11,8 +11,8 @@ public class Test {
         cola.encolar("Carro");
         cola.encolar("Moto");
         cola.encolar("Bicicleta");
-        System.out.println("Desencolar: "+cola.desencolar());
-        System.out.println("Desencolar: "+cola.desencolar());
+        System.out.println("Desencolar: " + cola.desencolar());
+        System.out.println("Desencolar: " + cola.desencolar());
     }
 
 }

@@ -1,7 +1,6 @@
 package Parcial1.Punto1;
 
 import ListaDoble.ListaDoubly;
-import ListaDoble.Node;
 
 /**
  *

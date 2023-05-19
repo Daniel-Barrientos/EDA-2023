@@ -15,22 +15,34 @@ public class Pila<A> {
     public void setCima(Node<A> cima) {
         this.cima = cima;
     }
-    public void apilar(A dato){
-        Node nuevo = new Node(dato,cima);
+
+    public void apilar(A dato) {
+        Node nuevo = new Node(dato, cima);
         cima = nuevo;
     }
-    
-    public A desapilar(){
-        if(esVacia()){
+
+    public A dePilar() {
+        if (esVacia()) { //Comprobamos si la lista esta vacia
+            throw new RuntimeException("La lista esta vacia");
+        }
+        A resultado;
+        resultado = cima.getDato();
+        cima = cima.getSiguiente();
+        return resultado;
+    }
+
+    public A desapilar() {
+        if (esVacia()) {
             return null;
-        }else{
-            A dato=cima.getDato();
-            cima=cima.getSiguiente();
+        } else {
+            A dato = cima.getDato();
+            cima = cima.getSiguiente();
             return dato;
         }
     }
-    public boolean esVacia(){
+
+    public boolean esVacia() {
         return cima == null;
     }
-    
+
 }

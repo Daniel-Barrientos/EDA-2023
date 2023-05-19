@@ -8,33 +8,53 @@ public class Cola<A> {
 
     Node<A> inicio;
     Node<A> fin;
+    int size ;
 
-    public void encolar(A dato){
-         Node nuevo = new Node(dato,inicio);
-         if(inicio==null){
-             inicio=nuevo;
-             fin=nuevo;
-         }else{
-             fin.setSiguiente(nuevo);
-             fin=nuevo;
-         }
-     }
+    public void encolar(A dato) {
+        Node nuevo = new Node(dato, inicio);
+        if (inicio == null) {
+            inicio = nuevo;
+            fin = nuevo;
+        } else {
+            fin.setSiguiente(nuevo);
+            fin = nuevo;
+        }
+        size = size++;
+    }
 
-    public A desencolar(){
-         if (esVacia()){
-             return null;
-         }else{
-             A dato = inicio.getDato();
-             inicio=inicio.getSiguiente();
-             return dato;
-         }
-     }
+    public A desencolar() {
+        if (esVacia()) {
+            return null;
+        } else {
+            A dato = inicio.getDato();
+            inicio = inicio.getSiguiente();
+            return dato;
+        }
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
     
-     public boolean esVacia(){
-         return inicio == null;
-     }
+    
+    
+    public void imprimir(){
+        Node aux = inicio;
+        while(aux != null){
+            System.out.println("Dato: "+ aux.getDato());
+            aux = aux.getSiguiente();
+        }
+    }
 
-   public Node<A> getInicio() {
+    public boolean esVacia() {
+        return inicio == null;
+    }
+
+    public Node<A> getInicio() {
         return inicio;
     }
 

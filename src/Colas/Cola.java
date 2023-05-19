@@ -8,7 +8,7 @@ public class Cola<A> {
 
     Node<A> inicio;
     Node<A> fin;
-    int size ;
+    int size;
 
     public void encolar(A dato) {
         Node nuevo = new Node(dato, inicio);
@@ -39,13 +39,11 @@ public class Cola<A> {
     public void setSize(int size) {
         this.size = size;
     }
-    
-    
-    
-    public void imprimir(){
-        Node aux = inicio;
-        while(aux != null){
-            System.out.println("Dato: "+ aux.getDato());
+
+    public void imprimir() {
+        Node<A> aux = inicio;
+        while (!esVacia()) {
+            System.out.println("Dato: " + aux.getDato());
             aux = aux.getSiguiente();
         }
     }

@@ -21,6 +21,14 @@ public class Pila<A> {
         cima = nuevo;
     }
 
+    public void imprimirPila() {
+        Node<A> temp = cima;
+        while (temp != null) {
+            System.out.println(temp.getDato());
+            temp = temp.getSiguiente();
+        }
+    }
+
     public A dePilar() {
         if (esVacia()) { //Comprobamos si la lista esta vacia
             throw new RuntimeException("La lista esta vacia");

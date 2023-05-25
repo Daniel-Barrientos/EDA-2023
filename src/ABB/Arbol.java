@@ -60,7 +60,7 @@ public class Arbol<E> {
         if (node == null) {
             return 0;
         } else {
-            
+
             int tamanoIzquierdo = tamanio(node.getArbIzq());
             int tamanoDerecho = tamanio(node.getArbDer());
             return 1 + tamanoIzquierdo + tamanoDerecho;
@@ -68,4 +68,49 @@ public class Arbol<E> {
         }
 
     }
+
+    public Node eliminarNodo(Node <Integer> node, int dato) {
+        if (node == null) {
+            return null; // El árbol está vacío, no hay nodos que eliminar
+        }
+
+        // Buscar el nodo a eliminar en el árbol
+        if (dato < node.getDato()) {
+            node.setArbIzq(eliminarNodo(node.getArbIzq(), dato)); // El nodo a eliminar está en el subárbol izquierdo
+        } else if (dato > node.getDato()) {
+            node.setArbDer(eliminarNodo(node.getArbDer(), dato)); // El nodo a eliminar está en el subárbol derecho
+        } else {
+            // Se encontró el nodo a eliminar
+
+            // Caso 1: El nodo a eliminar no tiene hijos o es una hoja
+            if (node.getArbIzq() == null && node.getArbDer() == null) {
+                return null;
+            }
+
+            // Caso 2: El nodo a eliminar tiene un solo hijo (izquierdo o derecho)
+            if (node.getArbIzq() == null) {
+                return node.getArbDer();
+            }
+            if (node.getArbDer() == null) {
+                return node.getArbIzq();
+            }
+
+            // Caso 3: El nodo a eliminar tiene dos hijos
+            // En este caso, se busca el sucesor inorden o predecesor inorden para reemplazar el nodo a eliminar
+            Node<Integer> sucesorInorden = encontrarSucesorInorden(node.getArbDer());
+            node.setDato(sucesorInorden.getDato()); // Reemplazar el dato del nodo a eliminar por el dato del sucesor inorden
+            node.setArbDer(eliminarNodo(node.getArbDer(), sucesorInorden.getDato())); // Eliminar el sucesor inorden
+        }
+
+        return node;
+    }
+
+    private Node encontrarSucesorInorden(Node node) {
+        Node actual = node;
+        while (actual.getArbIzq() != null) {
+            actual = actual.getArbIzq();
+        }
+        return actual;
+    }
+
 }

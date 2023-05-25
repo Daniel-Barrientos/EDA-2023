@@ -26,8 +26,6 @@ public class Arbol<E> {
 
     public void inorden(Node raiz) {
         if (raiz == null) {
-            return;
-
         } else {
             inorden(raiz.getArbIzq());
             System.out.println("dato: " + raiz.getDato());
@@ -43,4 +41,31 @@ public class Arbol<E> {
         }
     }
 
+    public int contarHojas(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.getArbIzq() == null && node.getArbDer() == null) {
+            return 1;
+        }
+        int cantidadNodosIzquierdo = contarHojas(node.getArbIzq());
+        int cantidadNodosDerecha = contarHojas(node.getArbDer());
+
+        return cantidadNodosIzquierdo + cantidadNodosDerecha;
+
+    }
+
+    public int tamanio(Node node) {
+
+        if (node == null) {
+            return 0;
+        } else {
+            
+            int tamanoIzquierdo = tamanio(node.getArbIzq());
+            int tamanoDerecho = tamanio(node.getArbDer());
+            return 1 + tamanoIzquierdo + tamanoDerecho;
+
+        }
+
+    }
 }

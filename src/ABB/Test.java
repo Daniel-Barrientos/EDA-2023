@@ -5,7 +5,7 @@ package ABB;
  * @author Daniel Barrientos - 1152143
  */
 public class Test {
-
+    
     public static void main(String[] args) {
         Arbol arbol = new Arbol();
         arbol.insertar(6);
@@ -15,6 +15,11 @@ public class Test {
         arbol.insertar(5);
         //arbol.inorden(arbol.getRaiz());
         arbol.posorden(arbol.getRaiz());
+        
+        System.out.println("Cantidad de hojas: " + arbol.contarHojas(arbol.getRaiz()));
+        
+        System.out.println("Tamaño: " + arbol.tamanio(arbol.getRaiz()));
+        
     }
-
+    
 }

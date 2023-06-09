@@ -69,7 +69,7 @@ public class Arbol<E> {
 
     }
 
-    public Node eliminarNodo(Node <Integer> node, int dato) {
+    public Node eliminarNodo(Node<Integer> node, int dato) {
         if (node == null) {
             return null; // El árbol está vacío, no hay nodos que eliminar
         }
@@ -112,5 +112,34 @@ public class Arbol<E> {
         }
         return actual;
     }
+
+    public static Node encontrarMinimo(Node nodo) {
+        if (nodo == null || nodo.getArbIzq() == null) {
+            return nodo;
+        }
+
+        return encontrarMinimo(nodo.getArbIzq());
+    }
+
+    public static Node encontrarMaximo(Node nodo) {
+        if (nodo == null || nodo.getArbDer() == null) {
+            return nodo;
+        }
+
+        return encontrarMaximo(nodo.getArbDer());
+    }
+
+    public static int obtenerAltura(Node nodo) {
+        
+    if (nodo == null) {
+        return 0;
+    }
+
+    int alturaIzquierda = obtenerAltura(nodo.getArbIzq());
+    int alturaDerecha = obtenerAltura(nodo.getArbDer());
+
+    return Math.max(alturaIzquierda, alturaDerecha) + 1;
+}
+
 
 }

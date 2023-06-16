@@ -1,4 +1,4 @@
-package EXA_EDA;
+package ExamenFinal;
 
 import ABB.Arbol;
 import ABB.Node;

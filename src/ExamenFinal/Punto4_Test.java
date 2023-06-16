@@ -1,4 +1,4 @@
-package EXA_EDA;
+package ExamenFinal;
 
 import ABB.Arbol;
 
@@ -6,11 +6,11 @@ import ABB.Arbol;
  *
  * @author Daniel Barrientos - 1152143
  */
-public class Punto3_Test {
-
+public class Punto4_Test {
+    
     public static void main(String[] args) {
-
-        Punto3 punto = new Punto3();
+        
+        Punto4 punto = new Punto4();
         Arbol arbol = new Arbol();
         arbol.insertar(1);
         arbol.insertar(3);
@@ -22,9 +22,8 @@ public class Punto3_Test {
         arbol.insertar(13);
         arbol.insertar(14);
         
-        System.out.println("Nodos un hijo: " + punto.nodoUnHijo(arbol.getRaiz(), arbol));
-        System.out.println("Suma nodos un hijo: " + punto.sumaNodosUnHijo(arbol.getRaiz(), arbol));
-
+        System.out.println("El arbol binario estricto?\n" + punto.esEstricto(arbol.getRaiz(), arbol));
+        
     }
 
 }
